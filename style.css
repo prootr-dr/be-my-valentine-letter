@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("heart-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: "Pixelify Sans", sans-serif;
+    overflow: hidden; /* Evita scrollbar se i bottoni scappano */
+}
+
+/* Busta Pulsante */
+#envelope-container {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#envelope-container:hover {
+    transform: scale(1.05);
+}
+
+#envelope {
+    width: 200px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Schermata Lettera */
+#letter-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.2);
+}
+
+.letter-window {
+    width: 90vw;
+    max-width: 600px;
+    aspect-ratio: 3/2;
+    background-image: url("window.png");
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    gap: 15px;
+}
+
+/* Bottoni */
+.buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease-out; /* Rende il movimento fluido */
+}
+
+/* Transizione specifica per il tasto NO per farlo scivolare */
+.no-btn {
+    transition: all 0.2s ease-out;
+}
+
+.cat {
+    max-width: 150px;
+}
+
+.final-text {
+    font-size: 1.2rem;
+    color: #ff0000;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid pink;
+}
